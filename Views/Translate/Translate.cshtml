@@ -1,0 +1,30 @@
+﻿@model VovaTranslator.Models.Translate
+@using System.Globalization;
+
+<h1>Translate</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Translate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sex" class="control-label"></label>
+                <input asp-for="Sex" class="form-control" />
+                <span asp-validation-for="Sex" class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<p>@ViewData["Message"]</p>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
